@@ -1,4 +1,4 @@
-#include <Tle493d.h>
+#include <Tle493d_w2b6.h>
 
 Tle493d_w2b6 Tle493dMagnetic3DSensor = Tle493d_w2b6();
 void setup() {
