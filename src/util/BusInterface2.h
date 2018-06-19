@@ -1,12 +1,12 @@
-#ifndef TLE493D_W2B6_BUSIF_2_H_INCLUDED
-#define TLE493D_W2B6_BUSIF_2_H_INCLUDED
+#ifndef TLE493D_BUSIF_2_H_INCLUDED
+#define TLE493D_BUSIF_2_H_INCLUDED
 
 #include "BusInterface.h"
 
 #define BUS_ERROR 	1
 #define BUS_OK 		0
 
-namespace tle493d_w2b6
+namespace tle493d
 {
 	
 void initInterface(BusInterface_t *interface, TwoWire *bus, uint8_t adress, const uint8_t *resetValues);

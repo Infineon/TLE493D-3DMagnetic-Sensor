@@ -1,6 +1,10 @@
-#include <Tle493d_w2b6.h>
+#include <Tle493d.h>
+
+// use this if you have the TLE493d-A2B6
+// Tle493d_a2b6 Tle493dMagnetic3DSensor = Tle493d_a2b6();
 
 Tle493d_w2b6 Tle493dMagnetic3DSensor = Tle493d_w2b6();
+
 void setup() {
   Serial.begin(9600);
   while (!Serial);

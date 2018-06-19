@@ -1,12 +1,12 @@
-#ifndef TLE493D_W2B6_REGMASK_H_INCLUDED
-#define TLE493D_W2B6_REGMASK_H_INCLUDED
+#ifndef TLE493D_REGMASK_H_INCLUDED
+#define TLE493D_REGMASK_H_INCLUDED
 
 #include <Arduino.h>
 
 #define REGMASK_READ	0
 #define REGMASK_WRITE	1 //rw
 
-namespace tle493d_w2b6
+namespace tle493d
 {
 
 typedef struct

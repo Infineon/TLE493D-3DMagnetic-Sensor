@@ -1,19 +1,19 @@
-#ifndef TLE493D_W2B6_BUSIF_H_INCLUDED
-#define TLE493D_W2B6_BUSIF_H_INCLUDED
+#ifndef TLE493D_BUSIF_H_INCLUDED
+#define TLE493D_BUSIF_H_INCLUDED
 
 #include <Arduino.h>
 #include <Wire.h>
 
-#define TLE493D_W2B6_NUM_REG		23
+#define TLE493D_NUM_REG		23
 
-namespace tle493d_w2b6
+namespace tle493d
 {
 
 typedef struct 
 {
 	TwoWire *bus;
 	uint8_t adress;
-	uint8_t regData[TLE493D_W2B6_NUM_REG];
+	uint8_t regData[TLE493D_NUM_REG];
 } BusInterface_t;
 
 }

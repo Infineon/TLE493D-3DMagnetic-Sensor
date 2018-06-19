@@ -34,23 +34,30 @@
  *	range, so that interrupts are generated only when relevant data are available.
  */
 
-#ifndef TLE493D_W2B6_H_INCLUDED
-#define TLE493D_W2B6_H_INCLUDED
+#ifndef TLE493D_H_INCLUDED
+#define TLE493D_H_INCLUDED
 
 #include <Arduino.h>
 #include <Wire.h>
 #include "./util/BusInterface.h"
-#include "./util/Tle493d_w2b6_conf.h"
+#include "./util/Tle493d_conf.h"
 
+typedef enum Tle493d_Error
+{
+	TLE493D_NO_ERROR = 0,
+	TLE493D_BUS_ERROR = 1,
+	TLE493D_FRAME_ERROR = 2
+} Tle493d_Error_t;
 
-typedef enum Tle493d_w2b6_Error {
-	TLE493D_W2B6_NO_ERROR = 0, TLE493D_W2B6_BUS_ERROR = 1, TLE493D_W2B6_FRAME_ERROR = 2
-} Tle493d_w2b6_Error_t;
-
-class Tle493d_w2b6 {
-public:
-	enum TypeAddress_e {
-		TLE493D_W2B6_A0 = 0x35, TLE493D_W2B6_A1 = 0x22, TLE493D_W2B6_A2 = 0x78, TLE493D_W2B6_A3 = 0x44
+class Tle493d
+{
+  public:
+	enum TypeAddress_e
+	{
+		TLE493D_A0 = 0x35,
+		TLE493D_A1 = 0x22,
+		TLE493D_A2 = 0x78,
+		TLE493D_A3 = 0x44
 	};
 
 	/**
@@ -58,8 +65,11 @@ public:
 	 * 		 The addresses can be concatenated with 0 or 1 for reading or writing
 	 */
 
-	enum AccessMode_e {
-		LOWPOWERMODE = 0, MASTERCONTROLLEDMODE = 1, FASTMODE = 3,
+	enum AccessMode_e
+	{
+		LOWPOWERMODE = 0,
+		MASTERCONTROLLEDMODE = 1,
+		FASTMODE = 3,
 	};
 	/**
 	 * @enum AccessMode_e Enumerates the three available modes; number 2 is reserved
@@ -81,13 +91,13 @@ public:
 	 * @param mode Operating mode of the sensor; default is the master controlled mode
 	 * @param productType The library supports product types from A0 to A3; default is type A0
 	 */
-	Tle493d_w2b6(AccessMode_e mode = MASTERCONTROLLEDMODE,
-			TypeAddress_e productType = TLE493D_W2B6_A0);
+	Tle493d(AccessMode_e mode = MASTERCONTROLLEDMODE,
+			TypeAddress_e productType = TLE493D_A0);
 
 	/**
 	 * @brief Destructor
 	 */
-	~Tle493d_w2b6(void);
+	~Tle493d(void);
 	/**
 	 * @brief Starts the sensor
 	 */
@@ -101,7 +111,7 @@ public:
 	 * @param oneByteRead If one-byte read protocol should be used. Otherwise the two-byte protocol is available
 	 */
 	void begin(TwoWire &bus, TypeAddress_e slaveAddress, bool reset,
-			uint8_t oneByteRead);
+			   uint8_t oneByteRead);
 
 	/**
 	 * @brief Enables temperature measurement; by default already enabled
@@ -116,7 +126,7 @@ public:
 	/**
 	 * @brief Reads measurement results from sensor
 	 */
-	Tle493d_w2b6_Error updateData(void);
+	Tle493d_Error updateData(void);
 
 	/**
 	 * @return the Cartesian x-coordinate
@@ -152,28 +162,6 @@ public:
 	float getTemp(void);
 
 	/**
-	 * @brief The Wake Up threshold range disabling /INT pulses between upper threshold and lower threshold is limited
-	 *  	  to a window of the half output range. Here the adjustable range can be set with a ratio of size [-1,1]
-	 * 		  When all the measurement values Bx, By and Bz are within this range INT is disabled.
-	 * 		  If the arguments are out of range or any upper threshold is smaller than the lower one, the function
-	 * 		  returns without taking effect.
-	 * @param xh Upper threshold in x direction
-	 * @param xl Lower threshold in x direction
-	 * @param yh Upper threshold in y direction
-	 * @param yl Lower threshold in y direction
-	 * @param zh Upper threshold in z direction
-	 * @param zl Lower threshold in z direction
-	 */
-	void setWakeUpThreshold(float xh, float xl, float yh, float yl, float zh,
-			float zl);
-
-	/**
-	 * @brief Sets the update rate in low power mode
-	 * @param updateRate Update rate which is an unsigned integer from the 0 (the fastest) to 7 (the highest)
-	 */
-	void setUpdateRate(uint8_t updateRate);
-
-	/**
 	 * @brief Resets the sensor
 	 * @bug	not working
 	 */
@@ -181,12 +169,22 @@ public:
 
 	void readDiagnosis(uint8_t (&diag)[7]);
 
+  protected:
+	tle493d::BusInterface_t mInterface;
 	/**
-	 * @brief Checks if WA bit is set. When not interrupt configuration is as specified by the CA and INT bits.
+	 * @brief Stores new values into the bus interface; for this function to take effect the function writeOut() should be called afterwards
+	 * @param Register mask index as defined in @ref Registers_e
+	 * @param Value to be written into the register field specified by the register index
 	 */
-	bool wakeUpEnabled(void);
-private:
-	tle493d_w2b6::BusInterface_t mInterface;
+	void setRegBits(uint8_t regMaskIndex, uint8_t data);
+
+	/**
+	 * @brief Returns the value of a register field
+	 * @param Register mask index as defined in @ref Registers_e
+	 */
+	uint8_t getRegBits(uint8_t regMaskIndex);
+
+  private:
 	const TypeAddress_e mProductType;
 	AccessMode_e mMode;
 	int16_t mXdata;
@@ -215,19 +213,6 @@ private:
 	void disableCollisionAvoidance(void);
 
 	/**
-	 * @brief Stores new values into the bus interface; for this function to take effect the function writeOut() should be called afterwards
-	 * @param Register mask index as defined in @ref Registers_e
-	 * @param Value to be written into the register field specified by the register index
-	 */
-	void setRegBits(uint8_t regMaskIndex, uint8_t data);
-
-	/**
-	 * @brief Returns the value of a register field
-	 * @param Register mask index as defined in @ref Registers_e
-	 */
-	uint8_t getRegBits(uint8_t regMaskIndex);
-
-	/**
 	 * @brief Sets FP (fuse parity) and CP (configuration parity)
 	 */
 	void calcParity(uint8_t regMaskIndex);
@@ -236,7 +221,40 @@ private:
 	 * @brief Concatenates the upper bits and lower bits of magnetic or temperature measurements
 	 */
 	int16_t concatResults(uint8_t upperByte, uint8_t lowerByte, bool isB);
-
 };
 
-#endif		/* TLE493D_W2B6_H_INCLUDED */
+class Tle493d_w2b6 : public Tle493d
+{
+	/**
+	 * @brief The Wake Up threshold range disabling /INT pulses between upper threshold and lower threshold is limited
+	 *  	  to a window of the half output range. Here the adjustable range can be set with a ratio of size [-1,1]
+	 * 		  When all the measurement values Bx, By and Bz are within this range INT is disabled.
+	 * 		  If the arguments are out of range or any upper threshold is smaller than the lower one, the function
+	 * 		  returns without taking effect.
+	 * @param xh Upper threshold in x direction
+	 * @param xl Lower threshold in x direction
+	 * @param yh Upper threshold in y direction
+	 * @param yl Lower threshold in y direction
+	 * @param zh Upper threshold in z direction
+	 * @param zl Lower threshold in z direction
+	 */
+	void setWakeUpThreshold(float xh, float xl, float yh, float yl, float zh,
+							float zl);
+
+	/**
+	 * @brief Checks if WA bit is set. When not interrupt configuration is as specified by the CA and INT bits.
+	 */
+	bool wakeUpEnabled(void);
+
+	/**
+	 * @brief Sets the update rate in low power mode
+	 * @param updateRate Update rate which is an unsigned integer from the 0 (the fastest) to 7 (the highest)
+	 */
+	void setUpdateRate(uint8_t updateRate);
+};
+
+class Tle493d_a2b6 : public Tle493d
+{
+};
+
+#endif /* TLE493D_H_INCLUDED */
