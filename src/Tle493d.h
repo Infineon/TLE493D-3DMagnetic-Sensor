@@ -255,6 +255,7 @@ class Tle493d_w2b6 : public Tle493d
 
 class Tle493d_a2b6 : public Tle493d
 {
+	// void setUpdateRate(uint8_t updateRate);
 };
 
 #endif /* TLE493D_H_INCLUDED */
