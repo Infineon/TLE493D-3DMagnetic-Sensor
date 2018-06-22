@@ -111,7 +111,7 @@ void drawSine(float angle){
   line(px, py, width/8+radius+angle*20, py);
 
   // Output calculations to screen
-  text("Rotated angle " + int((polar * 1.03 + polar_base)/PI*180), width/8, height/4);
+  text("Angle rotated = " + int((angle)/PI*180), width/6, height/4);
 }
 
 class Point{
@@ -161,16 +161,18 @@ class PositionSelectButton
   {
     mX = btnX;
     mY = btnY;
-    mWidth = 10;
-    mHeight = 20;
-    mIsAzimuth= false;
+    mWidth = 20;
+    mHeight = 40;
+    mIsAzimuth= true;
   }
   void clickHandler(){
    mIsAzimuth = !mIsAzimuth;
-   if(mIsAzimuth)
-     mHeight = 20;
-   else
-     mHeight = 5;
+   if(mIsAzimuth){
+     mHeight = 40;
+   }
+   else{
+     mHeight = 10;
+   }
   }
   
   boolean azimuthSelected(){
@@ -184,18 +186,21 @@ class PositionSelectButton
 
   public void drawButton()
   {
-    fill(70);
     if (mIsAzimuth)
     {
-      fill(120, 80, 0);
+      fill(150, 30, 30);
+      textSize(18);
+      text("Top view", width/4, height*31/40);
     }
     else{
-      fill(120, 80, 0);
+      fill(150, 20, 20);
+      textSize(18);
+      text("Side view", width/4, height*31/40);
     }
     
     if (mouseOverBtn())
     {
-      fill(180, 120, 0);
+      fill(150, 40, 40);
     }
     rect(mX, mY, mWidth, mHeight);
     fill(255);
