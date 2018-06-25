@@ -1,4 +1,4 @@
-#include <Tle493d.h>
+#include <Tle493d_w2b6.h>
 
 /**
 * This example demonstrates the use of low poewr mode of sensor TLE493d-W2B6
