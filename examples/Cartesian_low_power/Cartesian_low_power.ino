@@ -1,11 +1,9 @@
 #include <Tle493d.h>
 
 /**
-* This example demonstrates the use of low poewr mode
+* This example demonstrates the use of low poewr mode of sensor TLE493d-W2B6
 */
 
-// use this if you have the TLE493d-A2B6
-// Tle493d_a2b6 Tle493dMagnetic3DSensor = Tle493d_a2b6();
 
 Tle493d_w2b6 Tle493dMagnetic3DSensor = Tle493d_w2b6(Tle493d::LOWPOWERMODE);
 void setup() {

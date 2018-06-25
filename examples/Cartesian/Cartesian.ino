@@ -1,9 +1,12 @@
 #include <Tle493d.h>
 
-// use this if you have the TLE493d-A2B6
-// Tle493d_a2b6 Tle493dMagnetic3DSensor = Tle493d_a2b6();
+/**
+* For basic setup just create a Tle493d() object. If you want to use the wake up mode please use Tle493d_w2b6(). Also
+* the setUpdateRate() method is slightly different for different variants
+*/
 
-Tle493d_w2b6 Tle493dMagnetic3DSensor = Tle493d_w2b6();
+
+Tle493d Tle493dMagnetic3DSensor = Tle493d();
 
 void setup() {
   Serial.begin(9600);

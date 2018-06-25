@@ -1,7 +1,7 @@
 // this examples is to be used with processing/sine_generator.pde
 #include <Tle493d.h>
 
-Tle493d_a2b6 Tle493dMagnetic3DSensor = Tle493d_a2b6();
+Tle493d Tle493dMagnetic3DSensor = Tle493d();
 void setup() {
   Serial.begin(9600);
   while (!Serial);
