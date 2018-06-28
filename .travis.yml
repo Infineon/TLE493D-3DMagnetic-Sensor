@@ -28,4 +28,4 @@ install:
     - platformio platform install -f file:///tmp/builder/. --without-package=uploader
 
 script:
-    - platformio ci --lib="." --board=xmc1100_xmc2go
+    - platformio ci --lib="./src" --board=xmc1100_xmc2go
