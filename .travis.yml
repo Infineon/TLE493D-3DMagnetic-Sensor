@@ -1,0 +1,32 @@
+language: python
+python:
+    - "2.7"
+
+sudo: false
+cache:
+    directories:
+        - "~/.platformio"
+
+addons:
+  apt_packages:
+    - lib32bz2-1.0
+    - lib32ncurses5
+    - lib32z1
+before_script:
+  - wget https://github.com/Infineon/Assets/releases/download/current/gcc-arm-none-eabi-5_4-2016q3-20160926-linux.-d-.tar.bz2 -O /tmp/gcc-arm-none-eabi.tar.bz2
+  - tar -xjf /tmp/gcc-arm-none-eabi.tar.bz2
+  - export PATH=$PATH:$PWD/gcc-arm-none-eabi-5_4-2016q3/bin/
+
+env:
+    - PLATFORMIO_CI_SRC=examples/Cartesian
+    - PLATFORMIO_CI_SRC=examples/Cartesian_low_power
+    - PLATFORMIO_CI_SRC=examples/sine_generator
+
+install:
+    - git clone https://github.com/Infineon/platformio-infineonxmc.git /tmp/builder
+    - cd /tmp/builder
+    - pip install -U platformio
+    - platformio platform install -f file://. --without-package=uploader
+
+script:
+    - platformio ci --lib="." --board=xmc1100_xmc2go

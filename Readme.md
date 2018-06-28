@@ -1,6 +1,6 @@
 # 3D-Magnetic-Sensor-2GO
 <img src="https://github.com/Infineon/Assets/blob/master/Pictures/3D%20Magnetic%20Sensor%202Go.jpg">
-
+[![Build Status](https://travis-ci.org/sherylll/TLE493D-W2B6-3DMagnetic-Sensor.svg?branch=master)](https://travis-ci.org/sherylll/TLE493D-W2B6-3DMagnetic-Sensor)
 Library of Infineon's 3D magnetic sensor TLE493D family (currently supporting W2B6 and A2B6) for Arduino. Notice that it is enough to use the class **Tle493d** if you want to use the basic setup. Classes **Tle493d-w2b6** and **Tle493d-a2b6** offers additional device-specific features. 
 
 ## Summary
