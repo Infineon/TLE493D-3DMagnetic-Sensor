@@ -24,9 +24,8 @@ env:
 
 install:
     - git clone https://github.com/Infineon/platformio-infineonxmc.git /tmp/builder
-    - cd /tmp/builder
     - pip install -U platformio
-    - platformio platform install -f file://. --without-package=uploader
+    - platformio platform install -f file:///tmp/builder/. --without-package=uploader
 
 script:
     - platformio ci --lib="." --board=xmc1100_xmc2go

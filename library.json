@@ -12,6 +12,11 @@
     "type": "git",
     "url": "https://github.com/Infineon"
   },
+  "examples":
+  {
+    "examples/*/*.ino",
+    "examples/*/*/*.ino"
+  },
   "version": "1.0.1",
   "frameworks": "arduino",
   "platforms": "infineonxmc"
