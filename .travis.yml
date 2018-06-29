@@ -23,9 +23,21 @@ env:
     - PLATFORMIO_CI_SRC=examples/sine_generator
 
 install:
-    - git clone https://github.com/Infineon/platformio-infineonxmc.git /tmp/builder
-    - pip install -U platformio
-    - platformio platform install -f file:///tmp/builder/. --without-package=uploader
+    ## build with stable core
+    # - git clone https://github.com/Infineon/platformio-infineonxmc.git /tmp/builder
+    # - pip install -U platformio
+    # - platformio platform install -f file:///tmp/builder/. --without-package=uploader
 
+    # build with development version
+    - git clone https://github.com/Infineon/XMC-for-Arduino.git /tmp/core
+    - zip -r /tmp/core/framework-arduinoxmc.zip /tmp/core/arm  
+    - git clone https://github.com/Infineon/platformio-infineonxmc.git /tmp/builder
+    - cd /tmp/builder
+    - platform_json=$(<platform.json)
+    - rm platform.json
+    - jq '.packages."framework-arduinoxmc".version = "file:///tmp/core/framework-arduinoxmc.zip"' <<<"$platform_json" > platform.json
+    - pip install -U platformio
+    - platformio platform install -f file://. --without-package=uploader
+    
 script:
     - platformio ci --lib="./src" --board=xmc1100_xmc2go
