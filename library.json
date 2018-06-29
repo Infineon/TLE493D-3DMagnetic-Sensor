@@ -17,6 +17,12 @@
     "examples/*/*.ino",
     "examples/*/*/*.ino"
   ],
+  "export": {
+    "include":
+    [
+        "src/util/*.h"
+    ]
+},
   "version": "1.0.1",
   "frameworks": "arduino",
   "platforms": "infineonxmc"
