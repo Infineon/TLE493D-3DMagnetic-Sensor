@@ -18,9 +18,9 @@ before_script:
   - export PATH=$PATH:$PWD/gcc-arm-none-eabi-5_4-2016q3/bin/
 
 env:
-    - PLATFORMIO_CI_SRC=examples/Cartesian
-    - PLATFORMIO_CI_SRC=examples/Cartesian_low_power
-    - PLATFORMIO_CI_SRC=examples/sine_generator
+    - PLATFORMIO_CI_SRC=examples/Cartesian PLATFORMIO_BUILD_FLAGS=-I/src/util
+    - PLATFORMIO_CI_SRC=examples/Cartesian_low_power PLATFORMIO_BUILD_FLAGS=-I/src/util
+    - PLATFORMIO_CI_SRC=examples/sine_generator PLATFORMIO_BUILD_FLAGS=-I/src/util
 
 install:
     ## build with stable core
@@ -38,6 +38,6 @@ install:
     - jq '.packages."framework-arduinoxmc".version = "file:///tmp/core/framework-arduinoxmc.zip"' <<<"$platform_json" > platform.json
     - pip install -U platformio
     - platformio platform install -f file://. --without-package=uploader
-    
+    - cd -
 script:
     - platformio ci --lib="./src" --board=xmc1100_xmc2go
