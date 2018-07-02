@@ -12,15 +12,18 @@ addons:
     - lib32bz2-1.0
     - lib32ncurses5
     - lib32z1
+    - doxygen
+    - graphviz
+    
 before_script:
   - wget https://github.com/Infineon/Assets/releases/download/current/gcc-arm-none-eabi-5_4-2016q3-20160926-linux.-d-.tar.bz2 -O /tmp/gcc-arm-none-eabi.tar.bz2
   - tar -xjf /tmp/gcc-arm-none-eabi.tar.bz2
   - export PATH=$PATH:$PWD/gcc-arm-none-eabi-5_4-2016q3/bin/
 
 env:
-    - PLATFORMIO_CI_SRC=examples/Cartesian PLATFORMIO_BUILD_FLAGS=-I/src/util
-    - PLATFORMIO_CI_SRC=examples/Cartesian_low_power PLATFORMIO_BUILD_FLAGS=-I/src/util
-    - PLATFORMIO_CI_SRC=examples/sine_generator PLATFORMIO_BUILD_FLAGS=-I/src/util
+    - PLATFORMIO_CI_SRC=examples/Cartesian 
+    - PLATFORMIO_CI_SRC=examples/Cartesian_low_power 
+    - PLATFORMIO_CI_SRC=examples/sine_generator 
 
 install:
     ## build with stable core
@@ -41,3 +44,5 @@ install:
     - cd -
 script:
     - platformio ci --lib="." --board=xmc1100_xmc2go
+
+#after_success:
