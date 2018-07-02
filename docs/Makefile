@@ -4,7 +4,7 @@ DOC_DIR ?= ./
 DOC_BUILD_DIR ?= ./build
 DOC_IMG_DIR ?= ./img
 
-DOT_PATH ?= C:\sofit\shei\graphviz\bin/dot.exe
+DOT_PATH ?= dot
 
 # General settings
 LIBRARY_NAME ?= library
@@ -23,7 +23,7 @@ DOXYGEN_ECHO ?= echo
 RM ?= rm
 RM_DIR ?= rm -rf
 COPY ?= cp
-DOXYGEN ?= C:/Program Files/doxygen/bin/doxygen.exe
+DOXYGEN ?= doxygen
 
 lib_doc: clean $(LIBRARY_NAME).pdf
 	
