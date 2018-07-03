@@ -23,7 +23,7 @@ if [ -f "library.pdf" ]; then
   git clone -b docs https://git@$GH_REPO_REF
   cd $REPO_NAME
   git config --global push.default simple
-  git config user.name $USR_NAME
+  git config user.name "$USR_NAME"
   git config user.email $USR_EMAIL
 
   rm -rf *
