@@ -51,14 +51,14 @@ $(LIBRARY_NAME).pdf:
 	@$(RM_DIR) $(DOC_BUILD_DIR)/latex/*
 	@$(DOXYGEN) $(WORKING_DOXYFILE)
 	
-	@$(CD) $(DOC_BUILD_DIR)/latex && pdflatex -quiet -interaction=batchmode refman
+	@$(CD) $(DOC_BUILD_DIR)/latex && pdflatex -interaction=batchmode refman
 	@$(CD) $(DOC_BUILD_DIR)/latex && makeindex -q refman.idx
-	@$(CD) $(DOC_BUILD_DIR)/latex && pdflatex -quiet -interaction=batchmode refman
+	@$(CD) $(DOC_BUILD_DIR)/latex && pdflatex -interaction=batchmode refman
 	@latex_count=8 ; \
 	while egrep -s 'Rerun (LaTeX|to get cross-references right)' $(DOC_BUILD_DIR)/latex/refman.log && [ $$latex_count -gt 0 ] ;\
 	    do \
 	      echo "Rerunning latex...." ;\
-	      cd $(DOC_BUILD_DIR)/latex && pdflatex -quiet -interaction=batchmode refman ;\
+	      cd $(DOC_BUILD_DIR)/latex && pdflatex -interaction=batchmode refman ;\
 	      latex_count=`expr $$latex_count - 1` ;\
 	    done
 	@$(CD) $(DOC_BUILD_DIR)/latex && makeindex -q refman.idx

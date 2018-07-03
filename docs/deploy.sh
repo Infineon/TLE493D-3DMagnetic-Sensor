@@ -5,11 +5,16 @@ PRIVATE_NAME=sherylll
 USR_EMAIL="Yuxi.Sun@infineon.com"
 GH_REPO_REF=github.com/$PRIVATE_NAME/$REPO_NAME.git
 
-sudo apt-get install doxygen graphviz
-whereis dot
-whereis doxygen
+sudo apt-get install graphviz
 #install texlive (instead of miktex)
 sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends texlive-full
+#install doxygen 1.8.11
+set -ex
+DOXYGEN_VER=doxygen-1.8.11
+DOXYGEN_TAR=${DOXYGEN_VER}.linux.bin.tar.gz
+DOXYGEN_URL="http://ftp.stack.nl/pub/users/dimitri/${DOXYGEN_TAR}"
+wget -O - "${DOXYGEN_URL}" | tar xz -C ${TMPDIR-/tmp} ${DOXYGEN_VER}/bin/doxygen
+sudo mv ${TMPDIR-/tmp}/${DOXYGEN_VER}/bin/doxygen /usr/bin/
 
 make 
   
