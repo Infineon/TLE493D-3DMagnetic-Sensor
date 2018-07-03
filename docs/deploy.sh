@@ -6,6 +6,7 @@ USR_EMAIL="Yuxi.Sun@infineon.com"
 GH_REPO_REF=github.com/$PRIVATE_NAME/$REPO_NAME.git
 
 sudo apt-get install doxygen graphviz
+whereis dot
 #install texlive (instead of miktex)
 sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends texlive-full
 
@@ -14,7 +15,7 @@ make
 # if file exists
 if [ -f "library.pdf" ]; then  
   git clone -b docs https://git@$GH_REPO_REF
-  cd REPO_NAME
+  cd $REPO_NAME
   git config --global push.default simple
   git config user.name $USR_NAME
   git config user.email $USR_EMAIL
