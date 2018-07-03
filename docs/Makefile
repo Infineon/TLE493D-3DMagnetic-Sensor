@@ -4,7 +4,7 @@ DOC_DIR ?= ./
 DOC_BUILD_DIR ?= ./build
 DOC_IMG_DIR ?= ./img
 
-DOT_PATH ?= dot
+DOT_PATH ?= /usr/bin/dot
 
 # General settings
 LIBRARY_NAME ?= library
@@ -23,7 +23,7 @@ DOXYGEN_ECHO ?= echo
 RM ?= rm
 RM_DIR ?= rm -rf
 COPY ?= cp
-DOXYGEN ?= doxygen
+DOXYGEN ?= /usr/bin/doxygen
 
 lib_doc: clean $(LIBRARY_NAME).pdf
 	
@@ -62,7 +62,7 @@ $(LIBRARY_NAME).pdf:
 	      latex_count=`expr $$latex_count - 1` ;\
 	    done
 	@$(CD) $(DOC_BUILD_DIR)/latex && makeindex -q refman.idx
-	@$(CD) $(DOC_BUILD_DIR)/latex && pdflatex -quiet -interaction=batchmode refman
+	@$(CD) $(DOC_BUILD_DIR)/latex && pdflatex -interaction=batchmode refman
 	@$(COPY) $(DOC_BUILD_DIR)/latex/refman.pdf $@
 	@$(RM) $(WORKING_DOXYFILE)
 

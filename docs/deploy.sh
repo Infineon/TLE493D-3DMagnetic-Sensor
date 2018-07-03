@@ -7,6 +7,7 @@ GH_REPO_REF=github.com/$PRIVATE_NAME/$REPO_NAME.git
 
 sudo apt-get install doxygen graphviz
 whereis dot
+whereis doxygen
 #install texlive (instead of miktex)
 sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends texlive-full
 
