@@ -2,7 +2,7 @@ language: python
 python:
     - "2.7"
 
-sudo: false
+sudo: required
 cache:
     directories:
         - "~/.platformio"
@@ -16,9 +16,6 @@ addons:
     - lib32bz2-1.0
     - lib32ncurses5
     - lib32z1
-    - doxygen
-    - graphviz
-    - doxygen-latex
     
 before_script:
   - wget https://github.com/Infineon/Assets/releases/download/current/gcc-arm-none-eabi-5_4-2016q3-20160926-linux.-d-.tar.bz2 -O /tmp/gcc-arm-none-eabi.tar.bz2
@@ -56,7 +53,7 @@ script:
 after_success:
     # only build once
     - |
-      if [PLATFORMIO_CI_SRC==examples/Cartesian]; then
+      if [ $(($TRAVIS_JOB_ID - $TRAVIS_BUILD_ID)) -eq 1 ]; then
         cd $TRAVIS_BUILD_DIR/docs
         make
         chmod +x deploy.sh
