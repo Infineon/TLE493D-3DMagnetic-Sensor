@@ -6,12 +6,8 @@ USR_EMAIL="Yuxi.Sun@infineon.com"
 GH_REPO_REF=github.com/$PRIVATE_NAME/$REPO_NAME.git
 
 sudo apt-get install doxygen graphviz
-#install miktex
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys D6BC243565B2087BC3F897C9277A7293F59E4889
-echo "deb http://miktex.org/download/ubuntu xenial universe" | sudo tee /etc/apt/sources.list.d/miktex.list
-sudo apt-get update
-sudo apt-get install miktex
-miktexsetup finish
+#install texlive (instead of miktex)
+sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends texlive-full
 
 make 
   
