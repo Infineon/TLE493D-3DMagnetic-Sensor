@@ -55,7 +55,6 @@ after_success:
     - |
       if [ $(($TRAVIS_JOB_ID - $TRAVIS_BUILD_ID)) -eq 1 ]; then
         cd $TRAVIS_BUILD_DIR/docs
-        make
         chmod +x deploy.sh
         ./deploy.sh
       fi
