@@ -26,11 +26,12 @@ before_script:
   - export PATH=$PATH:$PWD/gcc-arm-none-eabi-5_4-2016q3/bin/
 
 env:
-    - PLATFORMIO_CI_SRC=examples/Cartesian 
-    - PLATFORMIO_CI_SRC=examples/Cartesian_low_power 
-    - PLATFORMIO_CI_SRC=examples/sine_generator 
     global:
-        secure: 1SbBRVOZZSul8qllkZIkW6kNByLpINA6AaicQed7xu/rdjmZo1fiBk5s1gkrcS2xZr3+a2TBNba1Fp/qQEnHgDyuXj5rxtjM0VCD7wdCrhl+y9iKtYaznTPr/jAo6AU7GS4nIV4Yessn83owr2WFLSugss611RbzMW0rhQFzbiv7cFbOxX2pvytmN0PdHllAa4etjOB/HlIq0AVGQAS4dCgcvErdE90MZtg04eq+gvNxZgrbxkfm/RUEiRFDfdYdVxcOMo7DdiNWYt0r1TV+2whHbfNrTWlGSleZwtUDiYHwBOrDcah2CgQ8wYyDGLWUQrbmZ5MNt143gGzXhJsrP73pIxTkKIyvaeXX9br/M1SeUoW/jqSE8X5l8rbkOQHOF5PCDr8Tzkio18O3K9RW5Zn8VA9iZdizkI1QF/jfIWwIk8VbJjbNsLZijObDWzkezgtpyWPteK28lw/8l6XP0Tf+nOgT/CrkjppJcwTU8QQuMbYpeBq+BGYLp1fymG59iKKQNbckt/AzeYxoKDw0vtiuLZgDuxD9SO5QEbXr5lxQi3tO6arrlDhrxH+E5AO/0NdgdYorc5m3EYmHhMQI1He4SoceIN0F4+9EMzDbTEDZmP2pfj9i18aV+m5iFDls7r66tWYSchzUeEibBIrVLhJOgO3zXen9F928fb8YBuo=
+        - secure: 1SbBRVOZZSul8qllkZIkW6kNByLpINA6AaicQed7xu/rdjmZo1fiBk5s1gkrcS2xZr3+a2TBNba1Fp/qQEnHgDyuXj5rxtjM0VCD7wdCrhl+y9iKtYaznTPr/jAo6AU7GS4nIV4Yessn83owr2WFLSugss611RbzMW0rhQFzbiv7cFbOxX2pvytmN0PdHllAa4etjOB/HlIq0AVGQAS4dCgcvErdE90MZtg04eq+gvNxZgrbxkfm/RUEiRFDfdYdVxcOMo7DdiNWYt0r1TV+2whHbfNrTWlGSleZwtUDiYHwBOrDcah2CgQ8wYyDGLWUQrbmZ5MNt143gGzXhJsrP73pIxTkKIyvaeXX9br/M1SeUoW/jqSE8X5l8rbkOQHOF5PCDr8Tzkio18O3K9RW5Zn8VA9iZdizkI1QF/jfIWwIk8VbJjbNsLZijObDWzkezgtpyWPteK28lw/8l6XP0Tf+nOgT/CrkjppJcwTU8QQuMbYpeBq+BGYLp1fymG59iKKQNbckt/AzeYxoKDw0vtiuLZgDuxD9SO5QEbXr5lxQi3tO6arrlDhrxH+E5AO/0NdgdYorc5m3EYmHhMQI1He4SoceIN0F4+9EMzDbTEDZmP2pfj9i18aV+m5iFDls7r66tWYSchzUeEibBIrVLhJOgO3zXen9F928fb8YBuo=
+    matrix:
+        - PLATFORMIO_CI_SRC=examples/Cartesian 
+        - PLATFORMIO_CI_SRC=examples/Cartesian_low_power 
+        - PLATFORMIO_CI_SRC=examples/sine_generator 
 
 install:
     ## build with stable core
