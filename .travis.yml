@@ -59,7 +59,9 @@ after_success:
     # only build once (after one job by checking id, however this does not work reliably)
     - |
       if [ $(($TRAVIS_JOB_ID - $TRAVIS_BUILD_ID)) -eq 2 ]; then
-        cd $TRAVIS_BUILD_DIR/docs
-        chmod +x deploy.sh
-        ./deploy.sh
+        git clone https://github.com/Infineon/well-automated-documentation.git
+        cd well-automated-documentation/docs
+        # cd $TRAVIS_BUILD_DIR/docs
+        chmod +x publish_pdf.sh
+        ./publish_pdf.sh
       fi
