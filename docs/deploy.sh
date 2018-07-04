@@ -17,7 +17,7 @@ sudo apt-get install graphviz
 make 
   
 # if file exists
-if [ -f "library.pdf" ]; then  
+if [ -f "$REPO_NAME.pdf" ]; then  
   git clone -b docs https://git@$GH_REPO_REF
   cd $REPO_NAME
   git config --global push.default simple
@@ -25,8 +25,8 @@ if [ -f "library.pdf" ]; then
   git config user.email $USR_EMAIL
 
   rm -rf *
-  cp ../library.pdf .
-  git add library.pdf
+  cp ../"$REPO_NAME.pdf" .
+  git add "$REPO_NAME.pdf"
   git commit -m "doc update by commit ${TRAVIS_COMMIT}"
   
   # The ouput is redirected to /dev/null to hide any sensitive credential data
