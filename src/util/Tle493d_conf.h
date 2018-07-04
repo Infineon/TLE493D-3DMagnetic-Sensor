@@ -1,5 +1,5 @@
-#ifndef TLE493D_W2B6_CONF_H_INCLUDED
-#define TLE493D_W2B6_CONF_H_INCLUDED
+#ifndef TLE493D_CONF_H_INCLUDED
+#define TLE493D_CONF_H_INCLUDED
 
 #include "RegMask.h"
 
@@ -11,26 +11,26 @@
 #endif
 
 //master contrlled mode should be used in combination with power down mode
-#define TLE493D_W2B6_DEFAULTMODE			MASTERCONTROLLEDMODE
+#define TLE493D_DEFAULTMODE			MASTERCONTROLLEDMODE
 
-#define TLE493D_W2B6_STARTUPDELAY		60
-#define TLE493D_W2B6_RESETDELAY			30
+#define TLE493D_STARTUPDELAY		60
+#define TLE493D_RESETDELAY			30
 
-#define TLE493D_W2B6_NUM_OF_REGMASKS		50
-#define TLE493D_W2B6_NUM_OF_ACCMODES		4
-#define TLE493D_W2B6_MSB_MASK			0x07F1
-#define TLE493D_W2B6_LSB_MASK			0x07
-#define TLE493D_W2B6_MAX_THRESHOLD		1023
-#define TLE493D_W2B6_MEASUREMENT_READOUT	7
+#define TLE493D_NUM_OF_REGMASKS		50
+#define TLE493D_NUM_OF_ACCMODES		4
+#define TLE493D_MSB_MASK			0x07F1
+#define TLE493D_LSB_MASK			0x07
+#define TLE493D_MAX_THRESHOLD		1023
+#define TLE493D_MEASUREMENT_READOUT	7
 
-#define TLE493D_W2B6_B_MULT 				0.13
-#define TLE493D_W2B6_B_MULT_LOW			2.08 //for 8 bit resolution
-#define TLE493D_W2B6_TEMP_MULT 			0.24 //range 0.21 to 0.27
-#define TLE493D_W2B6_TEMP_MULT_LOW 		3.84 //for 8 bit resolution
-#define TLE493D_W2B6_TEMP_OFFSET 		1180 //range 1000 to 1360
-#define TLE493D_W2B6_TEMP_25				25 	 //room temperature offset
+#define TLE493D_B_MULT 				0.13
+#define TLE493D_B_MULT_LOW			2.08 //for 8 bit resolution
+#define TLE493D_TEMP_MULT 			0.24 //range 0.21 to 0.27
+#define TLE493D_TEMP_MULT_LOW 		3.84 //for 8 bit resolution
+#define TLE493D_TEMP_OFFSET 		1180 //range 1000 to 1360
+#define TLE493D_TEMP_25				25 	 //room temperature offset
 
-namespace tle493d_w2b6
+namespace tle493d
 {
 
 enum Registers_e

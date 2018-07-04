@@ -1,13 +1,13 @@
 #include "RegMask.h"
 
 
-uint8_t tle493d_w2b6::getFromRegs(const RegMask_t *mask, uint8_t *regData)
+uint8_t tle493d::getFromRegs(const RegMask_t *mask, uint8_t *regData)
 {
 	return (regData[mask->byteAdress] & mask->bitMask) >> mask->shift;
 }
 
 
-void tle493d_w2b6::setToRegs(const RegMask_t *mask, uint8_t *regData, uint8_t toWrite)
+void tle493d::setToRegs(const RegMask_t *mask, uint8_t *regData, uint8_t toWrite)
 {
 	if(mask->rw == REGMASK_WRITE)
 	{
