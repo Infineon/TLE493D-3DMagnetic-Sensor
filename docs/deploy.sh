@@ -1,8 +1,3 @@
-# TODO: change to official url
-REPO_NAME=TLE493D-W2B6-3DMagnetic-Sensor
-USR_NAME="Sun Yuxi (IFAG DES SDF FW)"
-PRIVATE_NAME=sherylll
-USR_EMAIL="Yuxi.Sun@infineon.com"
 GH_REPO_REF=github.com/$PRIVATE_NAME/$REPO_NAME.git
 
 #install texlive (instead of miktex)

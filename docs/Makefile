@@ -7,7 +7,8 @@ DOC_IMG_DIR ?= ./img
 DOT_PATH ?= /usr/bin/dot
 
 # General settings
-LIBRARY_NAME ?= library
+#LIBRARY_NAME ?= library
+LIBRARY_NAME = $(REPO_NAME)
 MAINPAGE ?= mainpage.dox
 PROJECT_LOGO ?= ./img/ifx_logo.png
 LATEX_HEADER ?= ./latexfiles/header.tex
@@ -28,7 +29,7 @@ DOXYGEN ?= /usr/bin/doxygen
 lib_doc: clean $(LIBRARY_NAME).pdf
 	
 $(LIBRARY_NAME).pdf:  
-	@$(ECHO) Generating $@ ...
+	@$(ECHO) Generating $@ 
 	@$(COPY) $(DOXYFILE) $(WORKING_DOXYFILE)
 	@$(DOXYGEN_ECHO) >> $(WORKING_DOXYFILE)
 	@$(DOXYGEN_ECHO) INPUT=$(SRC_DIR) >> $(WORKING_DOXYFILE)
