@@ -26,7 +26,7 @@ env:
     global:
         - USR_NAME="Sun Yuxi (IFAG DES SDF FW)"
         - USR_EMAIL="Yuxi.Sun@infineon.com"
-        - secure: ojGuiW64Z5kGldhrOkrZi7VQXOyH4rc8dv6QadxE4Q/OZPGpBG4qKWls7BBm4j4EZR1u+/SxA7XrC+aiFzQMuEyjUW5xl9bd2G1e34Cwm7gk5EYuUcTAMxAm0iUBhoF3GfkBvRub0oOslPLAVv1R/LGIWrKM2nQt5fic/eOejq7LgEt8ELLjDiavbNgV8BfPE/3Z8ArNJxHGtl878wJBKg7jIirBzpmKADd42OIqQTUf0nCicXvWXHbGYPWYcFG9Nn9l02zWFqkzbyft22a0BzYxkzghBZNclczbVP60c8eXgWh9kobZ7i4YnZTiT/wOBpuacPKGoIEOPN5Qid1WdGj8XjqALv03ZGdWNuHEwd0mmKZNb1mCJUshc7bsYVFAxIXyzNIp3TohHyJnlh3PXbqcim2Te7dCCpgcrGjNp+ds2TQXizLUv1YWGlO5zK7d4QkM6jsF+efYx75zxNc5b0Xg7OzVI8zoEdMBkRjLp+FAB5lQvTTFpZEKF2G1L1IIee0csjCmjYsfteIVCo/Bl4LJUVLzA5bwU2u7hwqj1rP1sU6gqEu7N/uuOmNk2X9pgBjKho+SUu22k+X2DDKh2GmHtWQhG2a/rQGx6+gcGeq/gppn67EI0yEfcrF0QSJTg6L64zf//vXjPxam6juoeJ5qiM08FErVqUGDZy709Nk=
+        - secure: OVy8b8wt07Clr1RXXsF4j+KZGzl/e7Yh8ybrXHu65y/r03rqqtLHvIekhAd3wshGyctWR7mllkW0NHhz22PDP9q7RxguArLxSfZHMUoPv9CyqfTj/oU8WRWP2juQRsrMTEYVbgI3yEGdsfuoQitMSEz7FIwi9wKe/v51c89QEISsVFB6HGavutXdK8HRT5lpmSgpU2ljsOtgitznQKQ7+uO7VNWw9e+mAjwI2Vr7A79Itly7K/942e6nWMsW+CYo+4ZTcY2tB2z7rJcY1RsYWfBNecUuPWFVeooCqLbPFLVxo4Zq0npXX4Eh0BBd+4K/A1H35f6Pzq1DqdBwMlZgs+AKSytdBVWXSDZ2uj6cYevXeymwkVjmrZsxshGDrIEl2BzFF7iBNNxhfZlmd4kD3u9z+8mswZgIrME0rQ0asGAXnr9l84rMQCpc4CrVeoqsMGL+0VisG+4ZNM4tcsHfBHLn8zcTyu+Q7/ZcdN0tfwodMBEMgZMv6vheudt2WK+zQNZ2skrwaLlHmOaQLWmO2pfnajDa22IgoZCF1T6TxSgykBvnl7HKN82Y23Ybq4OcQFk3W6AUiNjo76iG7MdaYWsKHYYgcG//lkvH/im9vEMNFy+jn4hbCjqObTQUYpk3gJDqRAwpj1p90VA2mrxFxnEeaAB+QFwA8o4e40CNhYk=
     matrix:
         - PLATFORMIO_CI_SRC=examples/Cartesian 
         - PLATFORMIO_CI_SRC=examples/Cartesian_low_power 
