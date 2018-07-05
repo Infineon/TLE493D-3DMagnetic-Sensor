@@ -36,7 +36,6 @@ bool tle493d::readOut(BusInterface_t *interface, uint8_t count)
 		}
 		ret = BUS_OK;
 	}
-	ret = interface->bus->endTransmission();
 	return ret;
 }
 
