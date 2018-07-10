@@ -24,8 +24,8 @@ before_script:
 
 env:
     global:
-        - USR_NAME="Sun Yuxi (IFAG DES SDF FW)"
-        - USR_EMAIL="Yuxi.Sun@infineon.com"
+        - USR_NAME="mhoechner"
+        - USR_EMAIL="Moritz.Hoechner@infineon.com"
         - secure: tvmn+7jQ71JAYMlxk5dKtgigLThVIVbrTZpjnR8gAuGlQupeZ3ad4/YMSxBdGvDcnyAue40dmzpGIkDWRFx1c2cIH96YvLRHVbo7yaO063veP0ciLiVOM334cgkE68AmW06Dnod95MA3G9yxic0KjUPm2QYdDYUXVpl+VI2q1+eYYME8RvM0FaIwkP0nTa+2qAE52vlU2DyZIJeJ01PTSWxwC1fGXU+D5D4mM/FBejvaXNypEauOi2nKgTvwqfMSL454QLPcdxQLfcKAOGUqrFoiBVQ870MAdqdykHJZL205WHd4RWtLkmGkCq4dgMnTEQFpSewTysK2GdIs86yadSj61CtZiH6U70Lf/0Zon0ORJ4crAn5r6+tOnELcVGX8cHB4QlbsW6mo+k5SZZfdsOa4hb6jvORjd2NxqhOEyQ67ieKoD0sALe71jXysKHpvzEWKI3xItnablutBTjvhlXGXZ/7j0fPR4k4cdqiuT5v+/jnG3QduO3uySHCFDdUlbdaORLZBJxRJwKVpVoTUoQ082ef2VWr0fwvL+nNUv8BwbHMEzbroTgaaO2S1RcX5fn41Ja0c6JhqKG0XBxJyB3tXWf4MvzvS/RajsJC4g8JG6B/P1cU3Datl3uof3IIHC6nol1vhHx/PyQUErTCKYguRPworL9SsPL8AbxAM8f0=
     matrix:
         - PLATFORMIO_CI_SRC=examples/Cartesian 
