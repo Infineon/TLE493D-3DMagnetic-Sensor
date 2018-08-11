@@ -47,6 +47,7 @@ install:
     - rm platform.json
     - jq '.packages."framework-arduinoxmc".version = "file:///tmp/core/framework-arduinoxmc.zip"' <<<"$platform_json" > platform.json
     - pip install -U platformio
+    - platformio update
     - platformio platform install -f file://. 
     - cd -
 script:
