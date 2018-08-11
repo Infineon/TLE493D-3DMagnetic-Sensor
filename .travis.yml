@@ -57,7 +57,7 @@ after_success:
     - |
       if [ $(($TRAVIS_JOB_ID - $TRAVIS_BUILD_ID)) -eq 2 ]; then
         export REPO_NAME=${TRAVIS_REPO_SLUG#*/}
-        git clone https://github.com/Infineon/well-automated-documentation.git
+        git clone https://github.com/Infineon/InfineonDoxyGenerator.git
         cd well-automated-documentation/docs
         # cd $TRAVIS_BUILD_DIR/docs
         chmod +x publish_pdf.sh
