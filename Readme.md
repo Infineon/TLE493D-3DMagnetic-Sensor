@@ -1,5 +1,5 @@
 # 3D-Magnetic-Sensor-2GO
-[![Build Status](https://travis-ci.org/Infineon/TLE493D-W2B6-3DMagnetic-Sensor.svg?branch=master)](https://travis-ci.org/Infineon/TLE493D-W2B6-3DMagnetic-Sensor)
+[![Build Status](https://travis-ci.org/Infineon/TLE493D-3DMagnetic-Sensor.svg?branch=master)](https://travis-ci.org/Infineon/TLE493D-3DMagnetic-Sensor)
 
 <img src="https://github.com/Infineon/Assets/blob/master/Pictures/3D%20Magnetic%20Sensor%202Go.jpg">
 
