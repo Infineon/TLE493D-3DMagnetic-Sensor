@@ -2,27 +2,11 @@
   "name": "TLE493D-Magnetic-Sensor",
   "keywords": "3D, magnetic, sensor2go",
   "description": "This library provides an Interface for Infineon's TLE493D Magnetic Sensor",
-  "authors":
-  {
-    "name": "Infineon",
-    "url": "https://www.infineon.com/cms/en/product/sensor/magnetic-position-sensor/3d-magnetic-sensor/"
-  },
   "repository":
   {
     "type": "git",
-    "url": "https://github.com/Infineon"
+    "url": "https://github.com/Infineon/TLE493D-3DMagnetic-Sensor.git"
   },
-  "examples":
-  [
-    "examples/*/*.ino",
-    "examples/*/*/*.ino"
-  ],
-  "export": {
-    "include":
-    [
-        "src/util/*.h"
-    ]
-},
   "version": "1.0.1",
   "frameworks": "arduino",
   "platforms": "infineonxmc"
