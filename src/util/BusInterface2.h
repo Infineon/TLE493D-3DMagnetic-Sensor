@@ -13,8 +13,6 @@ void initInterface(BusInterface_t *interface, TwoWire *bus, uint8_t adress, cons
 bool readOut(BusInterface_t *interface);
 bool readOut(BusInterface_t *interface, uint8_t count);
 bool writeOut(BusInterface_t *interface, uint8_t regAddr);
-bool writeOut(BusInterface_t *interface, uint8_t regAddr, uint8_t count);
-
 }
 
 #endif
