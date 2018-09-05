@@ -2,8 +2,7 @@
  *  @brief Arduino library to control Infineon's Magnetic 3D Sensor TLE493D families
  *	@author Yuxi Sun
  *	@author Florian Schmidt
- *  @bug sensor not responding after powered off, needs to be reflashed to respond
- *	@bug reset freezes the sensor, fast mode not working
+ *	@bug reset sequence freezes the W2B6 sensor, fast mode not working
  *	@bug User manual recommands INT=0 in fast mode however only disabling INT works
  *	@bug wake up mode not configured correctly (WA bit = 0)
  */

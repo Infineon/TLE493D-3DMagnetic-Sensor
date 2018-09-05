@@ -36,7 +36,11 @@ mInterface.bus->end();
 ```
 
 - TLE493D-A2B6 does not work with low power mode.
-  
+
+- Sensor does not respond after being reconnected.
+  As mentioned in [this issue](https://github.com/Infineon/TLE493D-3DMagnetic-Sensor/issues/6), the sensor works after being flashed, but not after being powered off and powered on again.
+  This is temporarily solved by twice writing out the configuration registers, in order to avoid unexpected INT pulse.
+
 ## Key Features and Benefits
 * TLE493D-A2B6 and TLE493D-W2B6 (three dimensional magnetic sensor)
 * XMC1100 (ARM® Cortex™-M0 based)
