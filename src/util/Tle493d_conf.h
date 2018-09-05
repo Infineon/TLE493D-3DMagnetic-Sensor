@@ -32,7 +32,10 @@
 
 namespace tle493d
 {
-
+/**
+ * @enum Registers_e
+ * names of register fields
+ */
 enum Registers_e
 {
 	BX1 = 0,
@@ -63,10 +66,13 @@ enum Registers_e
 	Ver,
 };
 
-/**
- * @enum Registers_e
- * names of register fields
- */
+enum RegisterAddr_e
+{
+	WAKEUP_REGISTER = 0x0D,
+	CONFIG_REGISTER = 0x10,
+	MOD1_REGISTER = 0x11,
+	MOD2_REGISTER = 0x13,
+};
 
 const RegMask_t regMasks[] = {
 	{ REGMASK_READ, 0, 0xFF, 0 },		// R_BX1

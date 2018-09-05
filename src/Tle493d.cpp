@@ -72,13 +72,13 @@ void Tle493d::begin(TwoWire &bus, TypeAddress_e slaveAddress, bool reset, uint8_
 	calcParity(tle493d::FP);
 
 	//write out the configuration register
-	tle493d::writeOut(&mInterface, 0x10);
+	tle493d::writeOut(&mInterface, tle493d::CONFIG_REGISTER);
 	//write out MOD1 register
-	tle493d::writeOut(&mInterface, 0x11);
+	tle493d::writeOut(&mInterface, tle493d::MOD1_REGISTER);
 
 	// make sure the correct setting is written 
-	tle493d::writeOut(&mInterface, 0x10);
-	tle493d::writeOut(&mInterface, 0x11);
+	tle493d::writeOut(&mInterface, tle493d::CONFIG_REGISTER);
+	tle493d::writeOut(&mInterface, tle493d::MOD1_REGISTER);
 	delay(TLE493D_STARTUPDELAY);
 }
 
@@ -100,7 +100,7 @@ bool Tle493d::setAccessMode(AccessMode_e mode)
 		setRegBits(tle493d::WU, 1);
 		setRegBits(tle493d::XH2, 0x7);
 		setRegBits(tle493d::XL2, 0x0);
-		tle493d::writeOut(&mInterface, 0x0D);
+		tle493d::writeOut(&mInterface, tle493d::WAKEUP_REGISTER);
 
 		//User manual recommands INT=0 in fast mode however only disabling INT works
 		setRegBits(tle493d::INT, 1);
@@ -116,11 +116,11 @@ bool Tle493d::setAccessMode(AccessMode_e mode)
 		setRegBits(tle493d::WU, 0x1);
 		setRegBits(tle493d::XH2, 0x7);
 		setRegBits(tle493d::XL2, 0x0);
-		tle493d::writeOut(&mInterface, 0x0D);
+		tle493d::writeOut(&mInterface, tle493d::WAKEUP_REGISTER);
 
 		//set update rate: fastest is 000b, slowest 111b
 		setRegBits(tle493d::PRD, 0);
-		tle493d::writeOut(&mInterface, 0x13);
+		tle493d::writeOut(&mInterface, tle493d::MOD2_REGISTER);
 
 		//INT must be disabled
 		setRegBits(tle493d::CA, 0);
@@ -140,42 +140,42 @@ void Tle493d::enableInterrupt(void)
 {
 	setRegBits(tle493d::INT, 1);
 	calcParity(tle493d::FP);
-	tle493d::writeOut(&mInterface, 0x11);
+	tle493d::writeOut(&mInterface, tle493d::MOD1_REGISTER);
 }
 
 void Tle493d::disableInterrupt(void)
 {
 	setRegBits(tle493d::INT, 0);
 	calcParity(tle493d::FP);
-	tle493d::writeOut(&mInterface, 0x11);
+	tle493d::writeOut(&mInterface, tle493d::MOD1_REGISTER);
 }
 
 void Tle493d::enableCollisionAvoidance(void)
 {
 	setRegBits(tle493d::CA, 1);
 	calcParity(tle493d::FP);
-	tle493d::writeOut(&mInterface, 0x11);
+	tle493d::writeOut(&mInterface, tle493d::MOD1_REGISTER);
 }
 
 void Tle493d::disableCollisionAvoidance(void)
 {
 	setRegBits(tle493d::CA, 0);
 	calcParity(tle493d::FP);
-	tle493d::writeOut(&mInterface, 0x11);
+	tle493d::writeOut(&mInterface, tle493d::MOD1_REGISTER);
 }
 
 void Tle493d::enableTemp(void)
 {
 	setRegBits(tle493d::DT, 0);
 	calcParity(tle493d::CP);
-	tle493d::writeOut(&mInterface, 0x10);
+	tle493d::writeOut(&mInterface, tle493d::CONFIG_REGISTER);
 }
 
 void Tle493d::disableTemp(void)
 {
 	setRegBits(tle493d::DT, 1);
 	calcParity(tle493d::CP);
-	tle493d::writeOut(&mInterface, 0x10);
+	tle493d::writeOut(&mInterface, tle493d::CONFIG_REGISTER);
 }
 
 Tle493d_Error_t Tle493d::updateData(void)
