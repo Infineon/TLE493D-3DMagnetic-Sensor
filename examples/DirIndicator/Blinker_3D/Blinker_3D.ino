@@ -67,14 +67,14 @@ void loop() {
   Serial.println();
   Serial.print("P");
   Serial.println(curPoint);
-//  Serial.print("Phi = ");
-//  Serial.print(phi)  ;
-//  Serial.print(" ,XR = ");
-//  Serial.println(xr, 4);
-//  Serial.print("Thresholds: PhiThr = ");
-//  Serial.print(phiThr);
-//  Serial.print(" , XR = ");
-//  Serial.println(xrThr, 4);
+  Serial.print("Phi = ");
+  Serial.print(phi)  ;
+  Serial.print(" ,XR = ");
+  Serial.println(xr, 4);
+  Serial.print("Thresholds: PhiThr = ");
+  Serial.print(phiThr);
+  Serial.print(" , XR = ");
+  Serial.println(xrThr, 4);
   delay(50);
 }
 
@@ -97,7 +97,9 @@ void serialEvent()
       double xr = x/z;
       double phi = atan2(y,z)*180.0/PI;
       generateCalibData(phi, xr, p);
-      
+      Serial.print("new cal values for P");
+      Serial.println(p);
+      delay(5000);
     }
     else if(c == 'r')
     {
