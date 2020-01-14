@@ -2,6 +2,7 @@
 
 **Mechanics Description:** The Direction Indicator has nine dedicated positions using a 3 x 3 matrix. They are numbered from 1 to 9 on the backside. The Magnet can be moved by a small needle closer to the sensor. A hole is on the opposite site. The AddOn needs to be mounted on a 3DKit2Go or a shield2Go. The magnet shall be above the sensor.
 [![DirectionIndicator2Go](https://www.infineon.com/export/sites/default/media/products/Sensors/Direction-indicator-2GO.jpg_33495184.jpg "DirectionIndicator2Go")](https://www.infineon.com/export/sites/default/media/products/Sensors/Direction-indicator-2GO.jpg_33495184.jpg "DirectionIndicator2Go")
+
 The 3D print files can be found [here](https://www.infineon.com/cms/en/tools/landing/infineon-for-makers/kits-2go/ "here") in the ***Do-it-yourself*** section. (coming soon)
 Following magnet is[ used](https://www.supermagnete.de/data_sheet_S-05-05-N.pdf " used") for this add on.
 
