@@ -9,7 +9,7 @@ Following magnet is[ used](https://www.supermagnete.de/data_sheet_S-05-05-N.pdf 
 ------------
 
 
-**Code & Calibration**
+**Code & Calibration:**
 By running the code, the position is displayed. The code has pre-calibration parameters implemented. Unfortunately they do not work 100% properly for a detection. In order to gain the individual calibration parameters of your device please
 1) Move the stick to position 1, insert "c1" and press return 
   --> New calibration parameters will be calculated and displayed.
