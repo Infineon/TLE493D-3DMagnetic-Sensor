@@ -63,6 +63,10 @@ To install the 3D magnetic sensor 2GO library in the Arduino IDE, please go now 
 ## Processing
 This library supports the open-source software [Processing](https://processing.org/) for creating GUIs. It allows you to connect your evaluation board to a PC over serial communication and visualisation of the embedded system. Find out more on the Arduino homepage [here](http://playground.arduino.cc/Interfacing/Processing). The respective files are stored in the /processing folder of this repository.
 
+## GUI Exe Examples
+
+Download [here](https://github.com/Infineon/TLE493D-3DMagnetic-Sensor/releases/download/untagged-8291dcde7f3b02fb819d/GUI_exe_examples_V1.0.zip) additional examples with graphical interface as executable files. 
+
 ## Board Information, Datasheet and Additional Information
 A PDF summarizing the features and layout of the 3D magnetic sensor 2GO board is stored on the Infineon homepage [here](https://www.infineon.com/dgdl/Infineon-3D%20Magnetic%20Sensor-PB-v03_00-EN.pdf?fileId=5546d46261d5e6820161e7571b2b3dd0).
 The datasheet for the TLE493D-W2B6 can be found here [TLE493D-W2B6 Datasheet](https://www.infineon.com/dgdl/Infineon-Infineon-TLE493D-W2B6%20A0-A3%203D%20Magnetic%20Sensor-DS-v01_00-EN.pdf?fileId=5546d46261764359016189ec158943a4) while respective application notes are located here [Application Notes](https://www.infineon.com/cms/en/product/sensor/magnetic-position-sensor/3d-magnetic-sensor/tle493d-w2b6-a0/#!documents).

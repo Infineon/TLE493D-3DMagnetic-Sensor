@@ -1,8 +1,10 @@
 language: python
 python:
-    - "2.7"
+    - 3.7
 
 sudo: required
+
+cache: pip
         
 branches:
   only:
@@ -14,10 +16,10 @@ env:
         - USR_EMAIL="Moritz.Hoechner@infineon.com"
         - secure: OLSYr2ioMsqS+l43+s+yzfaVeCTK0Z1ky+Tm31bHdU66Ahq8+ZiDNX4fVDuziJtuHJWR3pEmqnYdSqSqcuByObM+I7uW3RaV2fOAtvCnWQcar5jt0+TYHuuLbfLu7vsL6ntBkQJXWibLO3JlVFp8ZVNd33WUE0mrnNdR7xormwy6EV7Ry9X/j43G+zHGjAKXxcfWIKs279pHvhtye4Vhlg3U8MkEwlkgpGiMbpWmk5CaePTi82KuoIOAceVZ8ixssuqpt4DgCnl7m6t1D+8MnjXxPLISvOr0pHNHTJ+3/gv1dGUrxENyPiW9d1q8OnrKyD9CniqC6Rklj+g5mhR+v+FJvjfa2k85SXVvFYikkqUyXkIVZkJu+PxZX0mfY18SbI7GB8mOkjgcusI9KhzNhZJQxUzza/DBe2MOR72mHVdpHlsOtx/1PjaUjJtS6lFBBZw1gCKYsFkGU3UfY+Jr3yajU1veCICgde0gm3SfhCDsQVymi7hsfnbBj8YhrY1K5+YJ6JHk5Wu6x2SsT8Al2/YSZoDdUDCZZ8Y4WNO+ZY2vF0ZU3jOcK/JSuLV6W7VzXAhSaYHVAHq2fXNgW7EWkRaLeFGtjgwvZIkhQ1Mrsl6oObMJhFhaD6vP4MlwvTWKp0MB8NdFWsgR2ITU80sREp4RBzJVSQIvLiBCIwi0upY=
     matrix:
-        - PLATFORMIO_CI_SRC=examples/Caliper/ReadCaliper 
         - PLATFORMIO_CI_SRC=examples/Cartesian 
         - PLATFORMIO_CI_SRC=examples/Cartesian_low_power 
-        - PLATFORMIO_CI_SRC=examples/DirIndicator/Blinker_3D
+        - PLATFORMIO_CI_SRC=examples/DirIndicator
+        - PLATFORMIO_CI_SRC=examples/ReadCaliper 
         - PLATFORMIO_CI_SRC=examples/sine_generator 
 
 install:
