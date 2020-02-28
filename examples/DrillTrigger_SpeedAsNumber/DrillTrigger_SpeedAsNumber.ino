@@ -8,15 +8,17 @@
 
 Tle493d Tle493dMagnetic3DSensor = Tle493d();
 
+double X_min=0;
+double X_max=0;
+double Z_min=0;
+double Z_max=0;
+
 void setup() {
   Serial.begin(9600);
   while (!Serial);
   Tle493dMagnetic3DSensor.begin();
   Tle493dMagnetic3DSensor.enableTemp();
-  double X_min=0;
-  double X_max=0;
-  double Z_min=0;
-  double Z_max=0;
+
 }
 
 void loop() {
