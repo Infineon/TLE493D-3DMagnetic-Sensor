@@ -7,7 +7,7 @@
     "type": "git",
     "url": "https://github.com/Infineon/TLE493D-3DMagnetic-Sensor.git"
   },
-  "version": "1.1.2",
+  "version": "1.1.1",
   "frameworks": "arduino",
   "platforms": "infineonxmc"
 }
