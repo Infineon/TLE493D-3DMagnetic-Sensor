@@ -19,6 +19,7 @@ env:
         - PLATFORMIO_CI_SRC=examples/Cartesian 
         - PLATFORMIO_CI_SRC=examples/Cartesian_low_power 
         - PLATFORMIO_CI_SRC=examples/DirIndicator
+        - PLATFORMIO_CI_SRC=examples/DrillTrigger
         - PLATFORMIO_CI_SRC=examples/ReadCaliper 
         - PLATFORMIO_CI_SRC=examples/sine_generator 
 
