@@ -43,11 +43,16 @@ void Tle493d::begin(TwoWire &bus, TypeAddress_e slaveAddress, bool reset, uint8_
 		resetSensor();
 	}
 
-	// get all register data from sensor
-	tle493d::readOut(&mInterface);
-
 	//1-byte protocol -> PR = 1
 	setRegBits(tle493d::PR, oneByteRead);
+	 //disable interrupt
+	setRegBits(tle493d::INT, 1);
+	calcParity(tle493d::FP);
+	tle493d::writeOut(&mInterface, tle493d::MOD1_REGISTER);
+	tle493d::writeOut(&mInterface, tle493d::MOD1_REGISTER);
+
+	// get all register data from sensor
+	tle493d::readOut(&mInterface);
 
 	//correct reset values for other product types
 	switch (mProductType)
@@ -137,28 +142,28 @@ bool Tle493d::setAccessMode(AccessMode_e mode)
 
 void Tle493d::enableInterrupt(void)
 {
-	setRegBits(tle493d::INT, 1);
+	setRegBits(tle493d::INT, 0);
 	calcParity(tle493d::FP);
 	tle493d::writeOut(&mInterface, tle493d::MOD1_REGISTER);
 }
 
 void Tle493d::disableInterrupt(void)
 {
-	setRegBits(tle493d::INT, 0);
+	setRegBits(tle493d::INT, 1);
 	calcParity(tle493d::FP);
 	tle493d::writeOut(&mInterface, tle493d::MOD1_REGISTER);
 }
 
 void Tle493d::enableCollisionAvoidance(void)
 {
-	setRegBits(tle493d::CA, 1);
+	setRegBits(tle493d::CA, 0);
 	calcParity(tle493d::FP);
 	tle493d::writeOut(&mInterface, tle493d::MOD1_REGISTER);
 }
 
 void Tle493d::disableCollisionAvoidance(void)
 {
-	setRegBits(tle493d::CA, 0);
+	setRegBits(tle493d::CA, 1);
 	calcParity(tle493d::FP);
 	tle493d::writeOut(&mInterface, tle493d::MOD1_REGISTER);
 }
