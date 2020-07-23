@@ -67,6 +67,14 @@ This library supports the open-source software [Processing](https://processing.o
 
 Download [here](https://github.com/Infineon/TLE493D-3DMagnetic-Sensor/releases/download/untagged-8291dcde7f3b02fb819d/GUI_exe_examples_V1.0.zip) additional examples with graphical interface as executable files. 
 
+## 3D Printed Add-Ons
+
+The TLx493D eval kit can be combined with several 3D printed mechanical add-ons. Designed to fit the 2Go form factor for quick and easy evaluation of common magnetic mechanical applications. Find out all the available 3D Printed add-ons [here](https://www.infineon.com/cms/en/product/sensor/magnetic-sensors/magnetic-position-sensors/3d-magnetics/#!boards).
+
+### Mini Controller with Python
+
+The [Mini Control 2Go](https://www.infineon.com/cms/en/product/evaluation-boards/mini_control2go/) 3D printer add-ons extends the TLE493D functionalities with several python scripts support. Check out the code in the following [repository](https://github.com/Infineon/magnetic-3d-mini-controller).
+
 ## Board Information, Datasheet and Additional Information
 A PDF summarizing the features and layout of the 3D magnetic sensor 2GO board is stored on the Infineon homepage [here](https://www.infineon.com/dgdl/Infineon-3D%20Magnetic%20Sensor-PB-v03_00-EN.pdf?fileId=5546d46261d5e6820161e7571b2b3dd0).
 The datasheet for the TLE493D-W2B6 can be found here [TLE493D-W2B6 Datasheet](https://www.infineon.com/dgdl/Infineon-Infineon-TLE493D-W2B6%20A0-A3%203D%20Magnetic%20Sensor-DS-v01_00-EN.pdf?fileId=5546d46261764359016189ec158943a4) while respective application notes are located here [Application Notes](https://www.infineon.com/cms/en/product/sensor/magnetic-position-sensor/3d-magnetic-sensor/tle493d-w2b6-a0/#!documents).
