@@ -308,7 +308,7 @@ void Tle493d::calcParity(uint8_t regMaskIndex)
 	if (regMaskIndex == tle493d::FP)
 	{
 		y ^= mInterface.regData[17];
-		y ^= (mInterface.regData[19] << 5); //upper 3 bits
+		y ^= (mInterface.regData[19] >> 5); //upper 3 bits
 	}
 	else if (regMaskIndex == tle493d::CP)
 	{
