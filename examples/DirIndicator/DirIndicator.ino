@@ -30,6 +30,15 @@ Tle493d sensor = Tle493d();
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(1000000);
+  
+  //If using the MS2Go-Kit: Enable following lines to switch on the sensor
+  // ***
+  // pinMode(LED2, OUTPUT);
+  // digitalWrite(LED2, HIGH);
+  // delay(50);
+  // ***
+  
+  
   sensor.begin();
   sensor.disableTemp();
   double phiRU = 14.0; //P9

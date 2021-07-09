@@ -32,10 +32,6 @@ void Tle493d::begin(void)
 
 void Tle493d::begin(TwoWire &bus, TypeAddress_e slaveAddress, bool reset, uint8_t oneByteRead)
 {
-	//TURN ON THE SENSOR
-	pinMode(LED2, OUTPUT);
-	digitalWrite(LED2, HIGH);
-	delay(50);
 	initInterface(&mInterface, &bus, slaveAddress, tle493d::resetValues);
 	mInterface.bus->begin();
 	if (reset)
@@ -266,8 +262,8 @@ void Tle493d::readDiagnosis(uint8_t (&diag)[7])
 	diag[1] = getRegBits(tle493d::FF);
 	diag[2] = getRegBits(tle493d::CF);
 	diag[3] = getRegBits(tle493d::T);
-	diag[4] = getRegBits(tle493d::PD3);
-	diag[5] = getRegBits(tle493d::PD0);
+	diag[4] = getRegBits(tle493d::PD_3);
+	diag[5] = getRegBits(tle493d::PD_0);
 	diag[6] = getRegBits(tle493d::FRM);
 }
 void Tle493d::setRegBits(uint8_t regMaskIndex, uint8_t data)

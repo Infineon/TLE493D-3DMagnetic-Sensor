@@ -47,7 +47,7 @@ enum Registers_e
 	TEMP1,
 	TEMP2,
 	ID, 							//diagnosis
-	P, FF, CF, T, PD3, PD0, FRM, 	//diagnosis (Diag)
+	P, FF, CF, T, PD_3, PD_0, FRM, 	//diagnosis (Diag)
 	XL, 							//wake up threshold MSBs
 	XH,
 	YL,
@@ -89,8 +89,8 @@ const RegMask_t regMasks[] = {
 	{ REGMASK_READ, 6, 0x40, 6},		// FF 
 	{ REGMASK_READ, 6, 0x20, 5},		// CF 
 	{ REGMASK_READ, 6, 0x10, 4},		// T 
-	{ REGMASK_READ, 6, 0x08, 3},		// PD3 
-	{ REGMASK_READ, 6, 0x04, 2},		// PD0
+	{ REGMASK_READ, 6, 0x08, 3},		// PD_3 
+	{ REGMASK_READ, 6, 0x04, 2},		// PD_0
 	{ REGMASK_READ, 6, 0x03, 0},		// FRM
 	
 	{ REGMASK_WRITE, 7, 0xFF, 0},		// XL (MSB)

@@ -11,6 +11,15 @@ Tle493d Tle493dMagnetic3DSensor = Tle493d();
 void setup() {
   Serial.begin(9600);
   while (!Serial);
+  
+  //If using the MS2Go-Kit: Enable following lines to switch on the sensor
+  // ***
+  // pinMode(LED2, OUTPUT);
+  // digitalWrite(LED2, HIGH);
+  // delay(50);
+  // ***
+  
+  
   Tle493dMagnetic3DSensor.begin();
   Tle493dMagnetic3DSensor.enableTemp();
   
