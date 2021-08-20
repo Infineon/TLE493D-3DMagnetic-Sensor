@@ -3,7 +3,7 @@
 
 <img src="https://github.com/Infineon/Assets/blob/master/Pictures/3D%20Magnetic%20Sensor%202Go.jpg">
 
-Library of Infineon's 3D magnetic sensor TLE493D family (currently supporting W2B6 and A2B6) for Arduino. Notice that it is enough to use the class **Tle493d** if you want to use the basic setup. Classes **Tle493d-w2b6**, **Tle493d-a2b6** and **Tle493d-p2b6** offers additional device-specific features. 
+Library of Infineon's 3D magnetic sensor TLE493D family (currently supporting W2B6, A2B6 and P2B6) for Arduino. Notice that it is enough to use the class **Tle493d** if you want to use the basic setup. Classes **Tle493d-w2b6**, **Tle493d-a2b6** and **Tle493d-p2b6** offers additional device-specific features. 
 
 ## Summary
 The 3D Magnetic Sensor 2GO is a budget-priced evaluation board equipped with the magnetic sensor [TLE493D](https://www.infineon.com/cms/en/product/sensor/magnetic-position-sensor/3d-magnetic-sensor/tle493d-w2b6-a0/) for three dimensional measurement combined with an ARM® Cortex™-M0 CPU. The 3D Magnetic Sensor 2GO has a complete set of on-board devices, including an on-board debugger. Build your own application and gadget with the 3D Magnetic Sensor 2GO.
