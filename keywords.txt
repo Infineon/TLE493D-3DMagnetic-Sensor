@@ -25,7 +25,7 @@ updateData	KEYWORD2
 getX	KEYWORD2
 getY	KEYWORD2
 getZ	KEYWORD2
-getAmount	KEYWORD2
+getNorm	KEYWORD2
 getAzimuth	KEYWORD2
 getPolar	KEYWORD2
 getTemp	KEYWORD2
