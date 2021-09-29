@@ -43,13 +43,13 @@ void Tle493d::begin(TwoWire &bus, TypeAddress_e slaveAddress, bool reset, uint8_
 	switch (mProductType)
 	{
 	case TLE493D_A1:
-		setRegBits(tle493d::IICadr, 0x01);
+		setRegBits(tle493d::IICadr, 0b01);
 		break;
 	case TLE493D_A2:
-		setRegBits(tle493d::IICadr, 0x10);
+		setRegBits(tle493d::IICadr, 0b10);
 		break;
 	case TLE493D_A3:
-		setRegBits(tle493d::IICadr, 0x11);
+		setRegBits(tle493d::IICadr, 0b11);
 		break;
 	default:
 		break;
