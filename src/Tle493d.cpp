@@ -38,6 +38,22 @@ void Tle493d::begin(TwoWire &bus, TypeAddress_e slaveAddress, bool reset, uint8_
 	{
 		resetSensor();
 	}
+	
+	//correct reset values for other product types
+	switch (mProductType)
+	{
+	case TLE493D_A1:
+		setRegBits(tle493d::IICadr, 0b01);
+		break;
+	case TLE493D_A2:
+		setRegBits(tle493d::IICadr, 0b10);
+		break;
+	case TLE493D_A3:
+		setRegBits(tle493d::IICadr, 0b11);
+		break;
+	default:
+		break;
+	}
 
 	//1-byte protocol -> PR = 1
 	setRegBits(tle493d::PR, oneByteRead);
@@ -49,22 +65,6 @@ void Tle493d::begin(TwoWire &bus, TypeAddress_e slaveAddress, bool reset, uint8_
 
 	// get all register data from sensor
 	tle493d::readOut(&mInterface);
-
-	//correct reset values for other product types
-	switch (mProductType)
-	{
-	case TLE493D_A1:
-		setRegBits(tle493d::IICadr, 0x01);
-		break;
-	case TLE493D_A2:
-		setRegBits(tle493d::IICadr, 0x10);
-		break;
-	case TLE493D_A3:
-		setRegBits(tle493d::IICadr, 0x11);
-		break;
-	default:
-		break;
-	}
 
 	// default: master controlled mode
 	setAccessMode(mMode);
