@@ -63,13 +63,14 @@ To install the 3D magnetic sensor 2GO library in the Arduino IDE, please go now 
 ## Processing
 This library supports the open-source software [Processing](https://processing.org/) for creating GUIs. It allows you to connect your evaluation board to a PC over serial communication and visualisation of the embedded system. Find out more on the Arduino homepage [here](http://playground.arduino.cc/Interfacing/Processing). The respective files are stored in the /processing folder of this repository.
 
-## GUI Exe Examples
-
-Download [here](https://github.com/Infineon/TLE493D-3DMagnetic-Sensor/releases/download/untagged-8291dcde7f3b02fb819d/GUI_exe_examples_V1.0.zip) additional examples with graphical interface as executable files. 
-
 ## 3D Printed Add-Ons
 
 The TLx493D eval kit can be combined with several 3D printed mechanical add-ons. Designed to fit the 2Go form factor for quick and easy evaluation of common magnetic mechanical applications. Find out all the available 3D Printed add-ons [here](https://www.infineon.com/cms/en/product/sensor/magnetic-sensors/magnetic-position-sensors/3d-magnetics/#!boards).
+
+## 3D printing files and GUI
+
+Download [here](https://www.infineon.com/cms/en/product/evaluation-boards/tle493d-w2b6-ms2go/#!tools) the 3D printing files for the mechanical add-ons. 
+You can also find a GUI there for a first evaluation of those add-ons.
 
 ### Mini Controller with Python
 
