@@ -340,8 +340,7 @@ int16_t Tle493d::concatResults(uint8_t upperByte, uint8_t lowerByte, bool isB)
 	{
 		//temperature measurement has 2 LSB
 		value = (uint16_t)upperByte << 8;
-		value |= ((uint16_t)lowerByte & 0xC0) << 6;
-		value |= 0x06; //append bit 1 and 0
+		value |= ((uint16_t)lowerByte & 0x03) << 6;
 	}
 	value >>= 4; //right shift of 2's complement fills MSB with 1's
 	return value;
