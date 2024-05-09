@@ -41,8 +41,6 @@ void Tle493d::begin(TwoWire &bus, TypeAddress_e slaveAddress, bool reset, uint8_
 
 	initInterface(&mInterface, &bus, slaveAddress, tle493d::resetValues);
 
-	mInterface.bus->begin();
-
 	if(reset == true)
 	{
 		resetSensor();
